@@ -14,7 +14,9 @@ const Input = ({ name, label, error, ...rest }) => {
 				className="form-control"
 				autoComplete={autoPhrase}
 			/>
-			{error && <div className="alert alert-danger">{error}</div>}
+			{error && (name == 'username' || name == 'password') && (
+				<div className="alert alert-danger">{error}</div>
+			)}
 		</div>
 	);
 };
