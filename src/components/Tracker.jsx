@@ -88,7 +88,7 @@ class Today extends Component {
 
 		return (
 			<div className="container">
-				<h1>Tracker</h1>
+				<h1>Monster Tracker</h1>
 				<ProgressBar className="progressBar">
 					<ProgressBar
 						now={progress}
