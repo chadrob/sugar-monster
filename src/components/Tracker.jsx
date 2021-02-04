@@ -16,7 +16,7 @@ class Today extends Component {
 	};
 
 	componentDidMount = async () => {
-		const user = auth.getCurrentUser();
+		const user = await auth.getCurrentUser();
 
 		if (user) {
 			const { items } = this.state.data;
@@ -35,11 +35,13 @@ class Today extends Component {
 	};
 
 	handleAddItem = async ({ food, sugarAmount }) => {
+		const user = await auth.getCurrentUser();
+
 		const now = new Date();
 		const date = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`;
 		const time = now.getTime();
 		// add to db
-		if (auth.getCurrentUser()) {
+		if (user) {
 			await addFood(this.props.user, food, sugarAmount, date, time);
 		}
 		// update frontend

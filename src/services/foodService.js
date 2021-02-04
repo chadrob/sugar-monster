@@ -2,12 +2,14 @@ import http from './httpService';
 
 const apiEndpoint = '/food';
 
-function getFoodUrl(id) {
-	return `${apiEndpoint}/${id}`;
+function getFoodUrl(id, date) {
+	return `${apiEndpoint}/${id}/${date}`;
 }
 
 export function getFood(user) {
-	return http.get(getFoodUrl(user.email));
+	const now = new Date();
+	const date = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`;
+	return http.get(getFoodUrl(user.email, date));
 }
 
 export function addFood(user, food, sugarAmount, date, time) {
