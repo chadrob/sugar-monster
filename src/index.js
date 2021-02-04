@@ -20,7 +20,6 @@ Sentry.init({
 ReactDOM.render(
 	<BrowserRouter>
 		<App />
-		<button onClick={methodDoesNotExist}>Break the world</button>;
 	</BrowserRouter>,
 	document.getElementById('root')
 );
