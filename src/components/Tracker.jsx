@@ -36,7 +36,6 @@ class Today extends Component {
 
 	handleAddItem = async ({ food, sugarAmount }) => {
 		const user = await auth.getCurrentUser();
-
 		const now = new Date();
 		const date = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`;
 		const time = now.getTime();
